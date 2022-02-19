@@ -2,7 +2,7 @@
 
 NBC used to provide transcripts of some of its shows at the now defunct http://www.nbcnews.com/id/3719710. Check out this archive.org page [https://web.archive.org/web/20170601234403/http://www.nbcnews.com/id/3719710](https://web.archive.org/web/20170601234403/http://www.nbcnews.com/id/3719710).
 
-[msnbc_crawl.py](scripts/msnbc_crawl.py) crawls all the links to news transcripts. The script produces a [list of all links](data/all_links.csv). And [msnbc_extract.py](scripts/msnbc_extract.py) downloads and parses the news transcripts and appends some meta data and dumps it to a CSV file. 
+[nbc_crawl.py](scripts/nbc_crawl.py) crawls all the links to news transcripts. The script produces a [list of all links](data/all_links.csv). And [nbc_extract.py](scripts/nbc_extract.py) downloads and parses the news transcripts and appends some meta data and dumps it to a CSV file. 
 
 The raw html files and the final csv can be downloaded from [http://dx.doi.org/10.7910/DVN/ND1TCV](http://dx.doi.org/10.7910/DVN/ND1TCV).
 
