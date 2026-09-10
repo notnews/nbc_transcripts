@@ -34,16 +34,16 @@ Scrape JSONL also records the archive `source_url` for a newly fetched snapshot 
 
 The inventory has nine more lines than the historical parsed row count; this difference is not a claim that all nine are missing pages. The index contains overlapping MSNBC shows, not a census of NBC programming. This is the same legacy corpus referenced by `msnbc_transcripts`.
 
-Known weekday and month misspellings are normalized. Incomplete dates remain null. The Wayback availability endpoint returned HTTP 429 during smoke testing. `--snapshot TIMESTAMP` selects a known capture directly; the historical fixture snapshot remains retrievable. Unknown page layouts and empty archived transcripts fail visibly and remain eligible for retry. Original raw HTML uses filenames such as `id.38935621.ns.msnbc-rachel_maddow_show.html`.
+Known weekday and month misspellings are normalized. Incomplete dates remain null. The Wayback availability endpoint returned HTTP 429 when checked on 2026-09-10. `--snapshot TIMESTAMP` selects a known capture directly; the historical fixture snapshot remains retrievable. Unknown page layouts and empty archived transcripts fail visibly and remain eligible for retry. Original raw HTML uses filenames such as `id.38935621.ns.msnbc-rachel_maddow_show.html`.
 
 ## Collection methods
 
 | Era | Method |
 |---|---|
 | 2014 | Discover paths from the NBC transcript index; parse headline, timestamp, and `div#intelliTXT` |
-| Cleanup | Preserve URL inventory; parse local HTML or fetch a publicly available Wayback snapshot; append JSONL |
+| From 2026-09-10 | Preserve URL inventory; parse local HTML or fetch a publicly available Wayback snapshot; append JSONL |
 
-The pre-cleanup implementation is preserved at [ab024e4f7998ba22055fadb4622365d66d0eeed3](https://github.com/notnews/nbc_transcripts/tree/ab024e4f7998ba22055fadb4622365d66d0eeed3). New fetches write checkpoints under `data/`; reruns skip successful records and retry failures. Pure parsers read saved responses without accessing the network. Fixture provenance is in [tests/fixtures/SOURCES.md](tests/fixtures/SOURCES.md).
+The historical implementation is preserved at [ab024e4f7998ba22055fadb4622365d66d0eeed3](https://github.com/notnews/nbc_transcripts/tree/ab024e4f7998ba22055fadb4622365d66d0eeed3). New fetches write checkpoints under `data/`; reruns skip successful records and retry failures. Pure parsers read saved responses without accessing the network. Fixture provenance is in [tests/fixtures/SOURCES.md](tests/fixtures/SOURCES.md).
 
 An interrupted, unterminated final JSONL record is removed before resuming; complete records are preserved. A valid final record missing only its newline is retained. Malformed complete lines remain errors.
 
@@ -95,7 +95,7 @@ Use [CITATION.cff](CITATION.cff) and cite the relevant [Dataverse release](https
 
 ## License
 
-Code is [MIT licensed](LICENSE). News text, abstracts, and archived pages retain their owners' rights; a code license does not grant rights to those materials. Consult the terms of the linked data release.
+Code is [MIT licensed](LICENSE). News text, abstracts, and archived pages retain their owners' rights; a code license does not grant rights to those materials. The [Dataverse DOI record](https://api.datacite.org/dois/10.7910/DVN/ND1TCV) specifies CC0 1.0 for the deposit. Consult the release for access conditions.
 
 ## Adjacent Repositories
 
