@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use these data or scripts, please cite them as below."
+title: "MSNBC Transcripts on nbcnews.com, 2008--2014"
+type: dataset
+version: "1.0.0"
+date-released: 2017-09-15
+authors:
+  - family-names: "Laohaprapanon"
+    given-names: "Suriyan"
+  - family-names: "Sood"
+    given-names: "Gaurav"
+    email: "gsood07@gmail.com"
+repository-code: "https://github.com/notnews/nbc_transcripts"
+identifiers:
+  - type: doi
+    value: "10.7910/DVN/ND1TCV"
+    description: "Raw HTML and parsed CSV on Harvard Dataverse."
+license: MIT
+keywords:
+  - MSNBC
+  - NBC News
+  - transcripts
+  - cable news
+  - text corpus
