@@ -43,7 +43,7 @@ Known weekday and month misspellings are normalized. Incomplete dates remain nul
 | 2014 | Discover paths from the NBC transcript index; parse headline, timestamp, and `div#intelliTXT` |
 | Cleanup | Preserve URL inventory; parse local HTML or fetch a publicly available Wayback snapshot; append JSONL |
 
-The pre-cleanup implementation is preserved at [109407b](https://github.com/notnews/nbc_transcripts/tree/109407b). New fetches write checkpoints under `data/`; reruns skip successful records and retry failures. Pure parsers read saved responses without accessing the network. Fixture provenance is in [tests/fixtures/SOURCES.md](tests/fixtures/SOURCES.md).
+The pre-cleanup implementation is preserved at [ab024e4f7998ba22055fadb4622365d66d0eeed3](https://github.com/notnews/nbc_transcripts/tree/ab024e4f7998ba22055fadb4622365d66d0eeed3). New fetches write checkpoints under `data/`; reruns skip successful records and retry failures. Pure parsers read saved responses without accessing the network. Fixture provenance is in [tests/fixtures/SOURCES.md](tests/fixtures/SOURCES.md).
 
 An interrupted, unterminated final JSONL record is removed before resuming; complete records are preserved. A valid final record missing only its newline is retained. Malformed complete lines remain errors.
 
